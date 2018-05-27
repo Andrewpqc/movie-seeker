@@ -16,22 +16,21 @@ Lucene search engine based on Douban movie data. :beers:
 - let’s encrypt(https证书)
 
 ## 三、源码介绍
-+ 目录树如下图
+1.目录树如下图
 
 ![目录树](/images/screenshot.png)
 
 
+1.根目录下的`lib`目录内的内容为代码所依赖的jar包
 
+2.根目录下的`out`目录下的内容为编译输出的内容，可以将其打包并发布
+3.根目录下`src` 为源代码目录，也是实现功能的主要目录,下面是对该目录下的包的介绍：
+- indexer下面的LuceneIndex.java：利用Lucene建立索引的demo
+- retrieval下面的LuceneRetrieval.java：利用Lucene进行检索的demo
+- main下面的文件为应用程序使用的核心文件，SearchUtil.java将Lucene的索引建立与检索组织成了函数，以供jsp中直接调用，主要包括索引建立，单字段查询，多字段联合查询，模糊查询，基于范围的查询等。(具体的代码中包含了大量注释，可查看代码获取使用方法)SearchTest.java是对应的测试。
 
+- 其他的`tester`,`other`目录下的内容为本人开发过程中进行小测试时书写的代码，与app功能的实现并无直接关系，可以不用管他们。
 
-
-
-根目录下的lib目录内的内容为代码所依赖的jar包
-根目录下的out目录下的内容为编译输出的内容，可以将其打包并发布
-src为源代码目录，也是实现功能的主要目录：
-indexer下面的LuceneIndex.java：利用Lucene建立索引的demo
-retrieval下面的LuceneRetrieval.java：利用Lucene进行检索的demo
-main下面的文件为应用程序使用的核心文件，SearchUtil.java将Lucene的索引建立与检索组织成了函数，以供jsp中直接调用，主要包括索引建立，单字段查询，多字段联合查询，模糊查询，基于范围的查询等。(具体的代码中包含了大量注释，可查看代码获取使用方法)，SearchTest.java是对应的测试。其他的tester,other目录下的内容为本人开发过程中进行小测试时书写的代码，与app功能的实现并无直接关系，可以不用管他们。
 web目录下的内容为jsp页面
 index.jsp:首页页面，主要是一些表单，收集用户的查询关键字以及查询逻辑
 main_single.jsp：单字段查询请求的处理页面
