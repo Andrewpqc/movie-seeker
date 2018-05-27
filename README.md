@@ -61,4 +61,6 @@ Lucene search engine based on Douban movie data. :beers:
 docker pull  pqcsdockerhub/searchengine-image
 docker run -d -p 8081:8080 pqcsdockerhub/searchengine-image
 ```
-然后打开浏览器，访问｀https://localhost:8081/service/｀即可访问到封装好的服务。注：服务如果需要正常运行，请先访问｀http://localhost:8081/service/nobodyknows.jsp｀,访问此url,让程序在后台连接数据库，并且进行索引建立的工作，之后搜索服务即可正常运行。
+然后打开浏览器，访问`https://localhost:8081/service/`即可访问到封装好的服务。
+
+注：服务初次运行，首先需要访`http://localhost:8081/service/nobodyknows.jsp`。访问此url,让程序在后台连接数据库，并且进行索引建立的工作，之后搜索服务即可正常运行。
